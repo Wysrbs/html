@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<style>
+    span {
+        font-size: 2em;
+    }
+
+    .item {
+        font-size: 2em;
+        text-align: center;
+        border: 1px solid #e5e4e9;
+    }
+
+    .item-1 {
+        background-color: #ef342a;
+    }
+
+    .item-2 {
+        background-color: #f68f26;
+    }
+
+    .item-3 {
+        background-color: #4ba946;
+    }
+
+    .item-4 {
+        background-color: #0376c2;
+    }
+
+    .item-5 {
+        background-color: #c077af;
+    }
+
+    .item-6 {
+        background-color: #f8d29d;
+    }
+
+    .item-7 {
+        background-color: #b5a87f;
+    }
+
+    .item-8 {
+        background-color: #d0e4a9;
+    }
+
+    .item-9 {
+        background-color: #4dc7ec;
+    }
+    .grid{
+        display: grid;
+        grid-template-columns:repeat(3,100px) ;
+        grid-template-rows: repeat(3,100px);
+        grid-template-areas: 'a a a'
+                     'b b b'
+                     'c c c';
+    }
+</style>
+<body>
+<span>foo</span>
+<div class="grid">
+    <div class="item item-1">1</div>
+    <div class="item item-2">2</div>
+    <div class="item item-3">3</div>
+    <div class="item item-4">4</div>
+    <div class="item item-5">5</div>
+    <div class="item item-6">6</div>
+    <div class="item item-7">7</div>
+    <div class="item item-8">8</div>
+    <div class="item item-9">9</div>
+</div>
+<span>bar</span>
+</body>
+</html>
+<!--
+用到的布局属性
+display:grid inline-grid //设置网格容器
+
+//容器上使用的属性
+grid-template-columns   //设置列
+grid-template-rows      //设置行
+    repeat()    // 重复设置行或者列 也可以是按照某种规律的模板
+    auto-fill   //但是容器的大小不确定。如果希望每一行（或每一列）容纳尽可能多的单元格，这时可以使用
+    fr          //类似flex布的flex属性
+    minmax      //最大最小值
+    auto        //自己绝对属性
+    【Name】指定网格线的名称
+grid-row-gap      row-gap       //设置行间距
+grid-column-gap   column-gap    //设置列间距
+grid-gap 属性      gap          //简写属性
+grid-template-areas   //设置区域
+grid-template-areas:   "head head"
+                       "nav  main"
+                       "nav  foot"; /* 2.区域划分 当前为 三行 两列 */
+  grid-template-rows: 50px 1fr 30px; /* 3.各区域 宽高设置 */
+  grid-template-columns: 150px 1fr;
+
+grid-auto-flow      //设置网格的填补顺序 默认row
+  可设置值:row和column，还可以设成row dense和column dense
+  row dense:先行后列尽可能不出现空格
+justify-items      // 设置单元格内容水平位置
+align-items        // 设置单元格内容竖直位置
+place-items        //  两个的简写
+  取值   start：对齐单元格的起始边缘。
+        end：对齐单元格的结束边缘。
+        center：单元格内部居中。
+        stretch：拉伸，占满单元格的整个宽度（默认值）。
+justify-content   //整个内容区域在容器中的水平位置 (所有的单元格)
+align-content     //整个内容区域在容器中的垂直位置 (所有的单元格)
+place-content     //  两个的简写
+
+grid-auto-columns  //多余网格的列宽
+grid-auto-rows     //多余网格的行高
+
+//两个简写属性
+grid-template
+grid
+
+//单元格上使用的
+
+grid-column-start       左边框所在的垂直网格线
+grid-column-end         右边框所在的垂直网格线
+grid-row-start          上边框所在的水平网格线
+grid-row-end            下边框所在的水平网格线
+
+//设置单元格内容位置的 跟justify-items align-items 用法一样 只作用于单个项目
+justify-self
+align-self
+place-self
+
+-->
